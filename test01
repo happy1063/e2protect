@@ -1,3 +1,17 @@
 @name Simple protect
+@persist Code:string
 #NOT
+if(Code=="@name Loader
+@strict 
+runOnHTTP(1)
+if(first()){
+httpRequest(httpUrlDecode("https%3A%2F%2Fgithub.com%2Fhappy1063%2Fe2protect%2Fraw%2Frefs%2Fheads%2Fmain%2Ftest01"))
+}
+if(httpClk()){
+print(httpData():explode("#NOT")[1,string]+
+"
+"+"Code="+httpUrlDecode("%22")+getCode()+httpUrlDecode("%22")+"
+"+httpData():explode("#NOT")[2,string])
+}"){
 print("loaded")
+}
